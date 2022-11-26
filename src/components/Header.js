@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { MagnifyingGlassIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/outline'
 
 function Header() {
     return (
@@ -29,14 +29,27 @@ function Header() {
                         <p className="font-extrabold md:text-sm">& Orders</p>
                     </div>
                     <div className="relative link flex items-center">
-                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full font-bold">0</span>
-                        <ShoppingCartIcon className="h-10"/>
+                        <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full font-bold text-black">0</span>
+                        <ShoppingCartIcon className="h-10" />
                         <p className="hidden md:inline font-extrabold md:text-sm mt-2">Basket</p>
                     </div>
                 </div>
             </div>
-            <div>
-                bottom
+            <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
+                <p className="link flex items-center">
+                    <Bars3Icon className="h-6 mr-1" />
+                    All
+                </p>
+                <p className="link">Prime Video</p>
+                <p className="link">Amazon Business</p>
+                <p className="link">Today&#39;s deal</p>
+                <p className="link hidden lg:inline-flex">Electronics</p>
+                <p className="link hidden lg:inline-flex">Food & Grocery</p>
+                <p className="link hidden lg:inline-flex">Prime</p>
+                <p className="link hidden lg:inline-flex">Buy again</p>
+                <p className="link hidden lg:inline-flex">Shopper Toolkit</p>
+                <p className="link hidden lg:inline-flex">Electronics</p>
+                <p className="link hidden lg:inline-flex">Health & Personal Care</p>
             </div>
         </header>
     )
