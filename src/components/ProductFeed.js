@@ -4,13 +4,13 @@ const ProductFeed = ({ products }) => {
     return (
         <div>
             <h1>products here...</h1>
-            {products.map(({ id, title, price, descreiption, category, image }) => (
+            {products.map(({ id, title, price, description, category, image }) => (
                 <Product
                     key={id}
                     id={id}
                     title={title}
                     price={price}
-                    descreiption={descreiption}
+                    description={description}
                     category={category}
                     image={image}
                 />
