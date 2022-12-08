@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { StarIcon } from '@heroicons/react/24/solid';
 import Currency from "react-currency-formatter";
@@ -7,8 +7,18 @@ const minRating = 1;
 const maxRating = 5;
 
 const Product = ({ id, title, price, description, category, image }) => {
-    const [rating] = useState(Math.floor(Math.random() * (maxRating - minRating + 1)) + minRating);
-    const [hasPrime] = useState(Math.random() < 0.5);
+    const [rating, setRating] = useState()
+    const [hasPrime, setHasPrime] = useState()
+
+    useEffect(() => {
+        const randomRating = Math.floor(Math.random() * (maxRating - minRating + 1)) + minRating;
+        setRating(randomRating);
+
+        const randomHasPrime = Math.random() < 0.5;
+        setHasPrime(randomHasPrime);
+     
+    }, [])
+    
 
     return (
         <div className="relative flex flex-col m-5 bg-white z-30 p-10">
@@ -22,7 +32,6 @@ const Product = ({ id, title, price, description, category, image }) => {
                 {Array(rating).fill().map((_, i) => (
                     <StarIcon className="h-5 text-yellow-500" key={i} />
                 ))}
-
             </div>
             <p className="text-xs my-2 line-clamp-2">{description}</p>
 
