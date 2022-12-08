@@ -1,7 +1,13 @@
 import Image from 'next/image';
-import { MagnifyingGlassIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, ShoppingCartIcon, Bars3Icon } from '@heroicons/react/24/outline';
+import { useSession, signIn, signOut } from "next-auth/react";
 
 function Header() {
+
+    // document -> https://next-auth.js.org/getting-started/client#usesession
+    const { data: session, status } = useSession();
+    console.log('>>> session', session);
+
     return (
         <header>
             <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
@@ -11,9 +17,9 @@ function Header() {
                         width={150}
                         height={40}
                         objectFit="contain"
-                        className="cursor-pointer" 
+                        className="cursor-pointer"
                         alt="logo"
-                        />
+                    />
                 </div>
 
                 <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer bg-yellow-400 hover:bg-yellow-500">
@@ -22,8 +28,8 @@ function Header() {
                 </div>
 
                 <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-                    <div className="link">
-                        <p>Hello User A</p>
+                    <div className="link" onClick={signIn}>
+                        <p>{session? `Hello, ${session.user.name}` : 'Sign in'}</p>
                         <p className="font-extrabold md:text-sm">Account & Lists</p>
                     </div>
                     <div className="link">
