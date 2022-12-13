@@ -1,9 +1,21 @@
 import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import Currency from "react-currency-formatter";
+import { useDispatch } from 'react-redux';
+import { addToBasket, removeFromBasket } from '../slices/basketSlice';
 
 const CheckoutProduct = ({ product }) => {
     const { id, title, price, description, category, image, rating, hasPrime } = product;
+
+    const dispath = useDispatch();
+
+    const addItemToBasket = () => {
+        dispath(addToBasket(product));
+    }
+
+    const removeItemToBasket = () => {
+        dispath(removeFromBasket(id));
+    }
 
     return (
         <div className="grid grid-cols-5">
@@ -32,8 +44,8 @@ const CheckoutProduct = ({ product }) => {
             </div>
 
             <div className="flex flex-col space-y-2 my-auto justify-self-end">
-                <button className="button mt-auto">Add to Basket</button>
-                <button className="button mt-auto">Remove from Basket</button>
+                <button onClick={addItemToBasket} className="button mt-auto">Add to Basket</button>
+                <button onClick={removeItemToBasket} className="button mt-auto">Remove from Basket</button>
             </div>
 
         </div>
