@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectItems } from '../slices/basketSlice';
 import CheckoutProduct from '../components/CheckoutProduct';
 
-const checkout = () => {
+const Checkout = () => {
 
     const items = useSelector(selectItems);
 
@@ -42,4 +42,4 @@ const checkout = () => {
     )
 }
 
-export default checkout
+export default Checkout
