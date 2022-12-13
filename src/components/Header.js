@@ -28,8 +28,8 @@ function Header() {
                 </div>
 
                 <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-                    <div className="link" onClick={signIn}>
-                        <p>{session? `Hello, ${session.user.name}` : 'Sign in'}</p>
+                    <div className="link" onClick={!session ? signIn : signOut}>
+                        <p>{session ? `Hello, ${session.user.name}` : 'Sign in'}</p>
                         <p className="font-extrabold md:text-sm">Account & Lists</p>
                     </div>
                     <div className="link">
