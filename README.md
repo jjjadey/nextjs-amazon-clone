@@ -1,3 +1,16 @@
+# NextJS Amazon clone
+Project Tutorial: [Let's build Amazon 2.0 with NEXT.JS!](https://www.youtube.com/watch?v=DF68MNDxVwU&list=PLC8UH1EbXl_1oB73ZpMwR2SMnnLAzOgxr&index=22&t=11047s)
+
+* NextJS
+* Redux
+* NextAuth
+* Google Auth
+* Tailwind css
+* Vercel deploy
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -32,3 +45,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Setup google credential
+1. go to [https://console.cloud.google.com/](https://console.cloud.google.com/)
+2. select your project
+3. go to credentail section then click Web Client
+![Untitled (2)](https://user-images.githubusercontent.com/47839144/208285322-37698d81-a4ab-4c27-8b20-c40adc811b96.png)
+4. add URI
+![Untitled (3)](https://user-images.githubusercontent.com/47839144/208285330-507a7805-5e6e-41ff-a820-874b6fd9feeb.png)
+
