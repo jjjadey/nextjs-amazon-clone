@@ -14,7 +14,7 @@ export const basketSlice = createSlice({
             state.items = [...currentState.items, ...[action.payload]];
         },
         removeFromBasket: (state, action) => {
-  
+
             const index = state.items.findIndex(
                 basketItems => basketItems.id === action.payload
             );
@@ -33,5 +33,11 @@ export const { addToBasket, removeFromBasket } = basketSlice.actions;
 
 // selector - this is how wee pull information from the global store slice
 export const selectItems = (state) => state.basket.items;
+// const initialValue = 0;
+// const sumWithInitial = array1.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue
+// );
+export const selectTotal = (state) => state.basket.items.reduce((total, item) => total + item.price, 0)
 
 export default basketSlice.reducer;
